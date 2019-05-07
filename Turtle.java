@@ -255,7 +255,7 @@ public class Turtle implements Cloneable{
    }
 
    /** n 度だけ左に回る。 */
-   public void lt(int ia) {
+   public void lt(double ia) {
       ltd((double)ia*Math.PI/180.0);
    }
   

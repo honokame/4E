@@ -7,7 +7,8 @@ public class T22 {
     Turtle m = new Turtle(x, y, 180.0);
     Turtle m1 = new Turtle(x+d, y+d, 0.0);
     Color c = new Color(0.8, 0.0, 0.0, 1.0); //赤色
-    m1.setColor(Green); //m1 の色をcに指定
+    //m1.setColor(Green); //m1 の色をcに指定
+    m1.tcolor = new java.awt.Color(0,255,255);
     f.add(m);
     f.add(m1);
     m.fd(d);

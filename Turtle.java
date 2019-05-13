@@ -61,7 +61,7 @@ public class Turtle implements Cloneable{
    private int rotateWait = 20;
 
    /**  (x, y) という座標に angle の角度で、Turtle を作成。 */
-   public Turtle(int x,int y, int ia)
+   public Turtle(double x,double y, double ia)
       {
 	 this.x = ((double)x + 0.5);
 	 this.y = ((double)y + 0.5);
@@ -191,7 +191,7 @@ public class Turtle implements Cloneable{
    }
 
    /** n だけ前に進む。 */
-   public void fd(int n) {
+   public void fd(double n) {
       dfd(n);
    }
 
@@ -223,7 +223,7 @@ public class Turtle implements Cloneable{
    }
 
    /** n だけ後ろに進む。 */
-   public void bk(int n) {
+   public void bk(double n) {
       fd(-n);
    }
 

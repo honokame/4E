@@ -1,8 +1,9 @@
 import tg.*;
 import javafx.scene.paint.*;
+//import java.awt.Color;
 public class T23 {
   public static void main(String[] args){
-    double d = 100, x, y, a;
+    double d = 100,x,y,a;
     TurtleFrame f = new TurtleFrame();
     Turtle m = new Turtle(200,300,0);
     f.add(m);
@@ -18,8 +19,10 @@ public class T23 {
     m.rt(45);
     m.fd(d);
     double newscale = m2.tScale * 4; // m2 の tScale の 4 倍の数
-    m2.tScale = newscale; // m2 の tScale に代入
-    m2.tColor = new Color(0.0, 1.0, 1.0, 1.0); // m2 の亀の色を水色に変える
+    m2.tScale = newscale;
+    m2.tColor = new Color(0.0,1.0,1.0,1.0); // m2 の亀の色を水色に変える
+    Color c  = new Color(0.0,0.0,0.0,0.0);
+    m2.setColor(c);
     m2.fd(d);
     Point p = f.getMousePosition();
     m2.moveTo(p.x,p.y);

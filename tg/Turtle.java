@@ -322,7 +322,7 @@ public class Turtle implements Cloneable {
     public void up() {
         penDown = false;
     }
-    
+
     /** ペンをおろす。ペンをおろした状態で進むと、その軌跡が画面に残る。*/
     public void down() {
         penDown = true;

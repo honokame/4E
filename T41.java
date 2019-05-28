@@ -12,6 +12,7 @@ public class T41{
         System.exit(0);
       }
       if(e < 0.00001){
+        i++;
         System.out.println("近似値解は"+x);
         System.out.println(i+"回目");
         System.exit(0);

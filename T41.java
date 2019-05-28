@@ -1,11 +1,9 @@
 import static java.lang.Math.*;
 public class T41{
   public static void main(String[] args){
-    double x,e,i;
+    int i;
+    double x,e;
 
-    //x = random();
-    //e = pow((sin(x * PI / 180) + log(x)),2);
-    
     for(i = 0;i < 10000;i++){
       x = random();
       e = pow((sin(x * PI / 180) + log(x)),2);
@@ -14,12 +12,11 @@ public class T41{
         System.exit(0);
       }
       if(e < 0.00001){
-        System.out.println(x);
-        System.out.println(i);
+        i++;
+        System.out.println("近似値解は"+x);
+        System.out.println(i+"回目");
         System.exit(0);
       }
     }
   }
 }
-
-

@@ -5,6 +5,7 @@ public class T23 {
     double d = 50,x,y,a;
     TurtleFrame f = new TurtleFrame();
     Turtle m = new Turtle(200,300,0);
+    
     f.add(m);
     m.fd(d);
     

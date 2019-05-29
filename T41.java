@@ -3,7 +3,11 @@ public class T41{
   public static void main(String[] args){
     int i;
     double x,e;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/master
     for(i = 0;i < 10000;i++){
       x = random();
       e = pow((sin(x * PI / 180) + log(x)),2);

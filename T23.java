@@ -12,7 +12,7 @@ public class T23 {
     // 返り値を格納する変数が必要
     x = m.getX(); // mのX座標をとり出しxに代入
     y = m.getY(); // mのY座標をとり出しyに代入
-    a = m.getAngle() - 45; //mの角度をとり出し、45度引いてzに代入
+    a = m.getAngle() - 45; // mの角度をとり出し、45度引いてzに代入
     
     m.rt(a);
     m.fd(d);

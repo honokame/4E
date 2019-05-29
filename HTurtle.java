@@ -1,19 +1,24 @@
 import tg.*;
-public class HTurtle extends Turtle { //Turtle を拡張する
-  public double polygon(int n, double s){ //polygonメソッドの定義
-    double a = 360.0/n; //曲がる角度を求めておく
-    for(int j = 0; j < n; j++){ //n 回繰り返す
-      fd(s); //s 前に進んで
-      rt(a); //a 曲がるのを
+public class HTurtle extends Turtle { // Turtleを拡張し、HTurtleとする
+  
+  // 辺の長さがsのn角形を描く
+  public double polygon(int n,double s){ // HTurtleのメソッド、poligonを定義
+    double a = 360.0/n; // 曲がる角度を求めておく
+    
+    for(int j = 0;j < n;j++){ // n回繰り返す
+      fd(s); // sだけ前に進む
+      rt(a); // a度だけ曲がる
     }
-    return n * s;
+    return n * s; // かめがどれだけ進んだか返す
   }
-  public void house(double s){ //house メソッドの定義
-    polygon(4,s); //polygon を利用
+  
+  // 辺の長さがsの家を描く
+  public void house(double s){ // HTurtlのメソッド、houseを定義
+    polygon(4,s); // polygonを利用し四角形を描く
     fd(s);
     rt(30);
-    polygon(3,s);
+    polygon(3,s); // polygonを利用し三角形を描く
     lt(30);
-    bk(s); //もとの場所に戻しておく
+    bk(s); // もとの場所に戻しておく
   }
 }

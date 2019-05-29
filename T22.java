@@ -6,7 +6,7 @@ public class T22 {
     
     TurtleFrame f = new TurtleFrame(700,500); // 700*500のTurtleFrameを生成し、変数fに代入
     Turtle m = new Turtle(x,y,180.0); // (x,y,180.0)のTurtleを生成し、mに代入
-    Turtle m1 = new Turtle(x+d,y+d,0.0);// (x+d,y+d,180.0)のTurtleを生成し、m1に代入
+    Turtle m1 = new Turtle(x+d,y+d,0.0); // (x+d,y+d,180.0)のTurtleを生成し、m1に代入
     
     //javafx.scene.paint.Color c = new javafx.scene.paint.Color(1.0,0.0,0.0,1.0); //cに赤色を代入
     Color c = new Color(0.8,0.0,0.0,1.0); // 赤色を生成し、変数cに代入

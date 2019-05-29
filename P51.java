@@ -4,6 +4,6 @@ public class P51 {
     TurtleFrame f = new TurtleFrame();
     MyTurtle m = new MyTurtle();
     f.add(m);
-    m.houses(5, 20, 10);
+    m.houses(5,20,10);
   }
 }

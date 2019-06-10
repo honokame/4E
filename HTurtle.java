@@ -3,7 +3,7 @@ public class HTurtle extends Turtle { // Turtleを拡張し、HTurtleとする
   
   // 辺の長さがsのn角形を描く
   public double polygon(int n,double s){ // HTurtleのメソッド、poligonを定義
-    double a = 360.0/n; // 曲がる角度を求めておく
+    double a = 360.0 / n; // 曲がる角度を求めておく
     
     for(int j = 0;j < n;j++){ // n回繰り返す
       fd(s); // sだけ前に進む

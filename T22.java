@@ -10,7 +10,8 @@ public class T22 {
     
     //javafx.scene.paint.Color c = new javafx.scene.paint.Color(1.0,0.0,0.0,1.0); //cに赤色を代入
     Color c = new Color(0.8,0.0,0.0,1.0); // 赤色を生成し、変数cに代入
-    m1.setColor(c); // m1のペンの色をにcに変更 
+    //m1.setColor(new Color(0.8,0.0,0.0,1.0)); // m1のペンの色をにcに変更 
+    m1.setColor(c);
     
     f.add(m);
     f.add(m1);

@@ -22,7 +22,7 @@ public class GraphMain{
     m.down();
     m.setColor(Color.BLACK);
 
-    int n=51;
+    int n =  51;
     int[] x = new int[n], y = new int[n];
     
     for(int i = 0;i < n;i++){

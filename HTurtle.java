@@ -11,7 +11,7 @@ public class HTurtle extends Turtle { // Turtleを拡張し、HTurtleとする
     }
     return n * s; // かめがどれだけ進んだか返す
   }
-  
+
   // 辺の長さがsの家を描く
   public void house(double s){ // HTurtlのメソッド、houseを定義
     polygon(4,s); // polygonを利用し四角形を描く
@@ -20,5 +20,13 @@ public class HTurtle extends Turtle { // Turtleを拡張し、HTurtleとする
     polygon(3,s); // polygonを利用し三角形を描く
     lt(30);
     bk(s); // もとの場所に戻しておく
+  }
+  
+  public HTurtle(double x, double y, double angle) {
+    super(x, y, angle);
+  }
+  
+  public HTurtle() {
+    super();
   }
 }

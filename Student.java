@@ -1,6 +1,19 @@
 public class Student{
   private String studentID;
   private double score;
+  
+  // studentIDとscoreの初期値を設定
+  public Student(){
+    studentID = "e0000";
+    score = 60.0;
+  }
+  
+  // studentIDとscoreを代入
+  public Student(String studentID,double score){
+    this.studentID = studentID;
+    this.score = score;
+  }
+
 
   // studentIDを代入
   public void setStudentID(String studentID){

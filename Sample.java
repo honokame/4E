@@ -1,7 +1,7 @@
-public class Sample {
+public class Sample{
   private static String staticField;
   private String instanceField;
-  public Sample() {
+  public Sample(){
     staticField = "static";
     instanceField = "instance";
   }

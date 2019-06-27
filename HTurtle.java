@@ -22,8 +22,8 @@ public class HTurtle extends Turtle { // Turtleを拡張し、HTurtleとする
     bk(s); // もとの場所に戻しておく
   }
   
-  public HTurtle(double x, double y, double angle) {
-    super(x, y, angle);
+  public HTurtle(double x,double y,double angle) {
+    super(x,y,angle);
   }
   
   public HTurtle() {

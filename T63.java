@@ -17,19 +17,8 @@ public class T63{
         tm[i][j] = new HTurtle(j * 50 + 50,i * 50 + 50,0);
         f.add(tm[i][j]);
       }
+      }
 
-      /*
-        tm[i][2] = new HTurtle(j * 50 + 50,i * 50 + 50,0); 
-        f.add(tm[i][2]);
-        tm[i][3] = new HTurtle(j * 50 + 50,i * 50 + 50,0); 
-        f.add(tm[i][3]);
-        tm[i][2] = new HTurtle(j * 50 + 50,i * 50 + 50,0); 
-        f.add(tm[i][2]);
-        tm[i][1] = new HTurtle(j * 50 + 50,i * 50 + 50,0);
-        f.add(tm[i][1]);
-      }*/
-    }
-      
       // 一匹ずつ描く
       for(int i = 0;i < 3;i++){
       for(int j = 0;j < tm[i].length;j++){
@@ -38,7 +27,7 @@ public class T63{
       }
       for(int i = 3;i < 5;i++){
       for(int j = 0;j < tm[i].length;j++){
-      tm[i][j].polygon(i + 1,10);
+      tm[i][j].polygon(7 - i,10);
       }
       }
 

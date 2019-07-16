@@ -9,13 +9,12 @@ public class matrix{
     // System.out.print(args[0] + "\t" + args[1] + "\n" + args[2] + "\t" + args[3]  + "\n");    
     // Scanner = scan = new Scanner(System.in);
     // double [] matrix = new double[3];
-    //for(int i = 0;i < 4;i++){
-       matrix[1] = Double.parseDouble(scan.next());
-       matrix[1] = Double.parseDouble(scan.next());
-       matrix[2] = Double.parseDouble(scan.next());
-       matrix[3] = Double.parseDouble(scan.next());
-       
-    //}
+    for(int i = 0;i < 4;i++){
+       matrix[i] = Double.parseDouble(scan.next());
+       //matrix[1] = Double.parseDouble(scan.next());
+       //matrix[2] = Double.parseDouble(scan.next());
+       //matrix[3] = Double.parseDouble(scan.next());
+       }
     double frac = 1 / ((matrix[0] * matrix[3]) - (matrix[1] * matrix[2]));
     double[] imatrix = new double[4];
     imatrix[0] = frac * matrix[3];

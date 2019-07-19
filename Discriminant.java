@@ -1,4 +1,4 @@
-import java.lang.Math
+import static java.lang.Math.*;
 public class Discriminant{
   public static double discriminant(int a,int b,int c){
     double d;

@@ -1,4 +1,4 @@
-import java.lang.Math
+import static java.lang.Math.*;
 public class SolveQE{
   public static void solveQE(int a,int b,int c){
     double x1,x2,d;

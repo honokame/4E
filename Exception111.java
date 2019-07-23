@@ -24,7 +24,7 @@ public class Exception111{
     }
   }
 
-  static int division(String a,String b) throws NumberFormatException{
+  static int division(String a,String b) throws IllegalArgementException,HundredException{
     int data1,data2;
     data1 = Integer.parseInt(a);
     data2 = Integer.parseInt(b);

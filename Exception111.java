@@ -9,7 +9,6 @@ public class Exception111{
       }
       else{
         System.out.println(division(data1,data2));
-
       }
     }
     catch(ArrayIndexOutOfBoundsException e){
@@ -18,12 +17,10 @@ public class Exception111{
     catch(NumberFormatException e){
       System.out.println("引数に数を指定してください");
       System.out.println(e.getMessage());
-
     }
   }
 
   static int division(int a,int b){
     return a / b;
-
   }
 }

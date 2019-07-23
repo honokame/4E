@@ -8,7 +8,7 @@ class HundredException extends Exception{
 public class Exception111{
   public static void main(String[] args){
     try{
-      division(args[0],args[1]);
+      System.out.println(division(args[0],args[1]));
     }
     catch(ArrayIndexOutOfBoundsException e){
       System.out.println("引数を与えてください");

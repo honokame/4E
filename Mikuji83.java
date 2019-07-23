@@ -8,13 +8,16 @@ public class Mikuji83{
   }
 
   static boolean mikuji(String s){
-    int number;
+    int number = 0;
     try{
-      number = Integer.parseInt(s); // string型からint型に変換  
-    }catch(NumberFormatException e){
+      number = Integer.parseInt(s); // string型からint型に変換   
+    }
+
+    // 変換エラーが出た時
+    catch(NumberFormatException e){
       System.out.println("引数に数を指定してください");
     }
-    return (number == 7); // numberが7ならtrueを返す
+    
+    return (number == 7); // numberが7ならtrue、それ以外ならfalseを返す
   }
 }
-

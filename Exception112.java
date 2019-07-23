@@ -34,8 +34,12 @@ public class Exception112{
   // 商を求める
   static int division(String a,String b) throws NumberFormatException{
     int data1,data2;
+
+    // String型からint型に変換
     data1 = Integer.parseInt(a);
     data2 = Integer.parseInt(b);
+
+    // 商を返す
     return data1 / data2;
   }
 }

@@ -44,10 +44,10 @@ public class Exception113{
       System.out.println(e.getMessage());
     }
   }
-}
+
 
 // 商を求める
-static int division(String a,String b) throws IllegalArgementException HundredException{
+static int division(String a,String b) throws IllegalArgementException,HundredException{
   int data1 = 0,data2 = 0;
 
   // String型からint型に変換
@@ -58,7 +58,7 @@ static int division(String a,String b) throws IllegalArgementException HundredEx
   return data1 / data2;
 }
 
-
+}
 
 
 

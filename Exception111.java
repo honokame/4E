@@ -14,7 +14,8 @@ public class Exception111{
       System.out.println("引数を与えてください");
     }
     catch(NumberFormatException e){
-      System.out.println("引数に数を指定してください");
+      System.out.println("引数に数を指定してくださいまたは" + e.getMessage());
+
     }
     catch(IllegalArgementException e){
       System.out.println(e.getMessage());
@@ -28,6 +29,7 @@ public class Exception111{
     int data1,data2;
     data1 = Integer.parseInt(a);
     data2 = Integer.parseInt(b);
+    if(data2 == 0)throw(new NumberFormatException("除数が0"));
     if(data2 == 10)throw(new IllegalArgementException("10だけは受け付けません"));
     if(data2 == 100)throw(new HundredException("独自例外:"+data2));
     return data1 / data2;

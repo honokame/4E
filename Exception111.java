@@ -33,12 +33,3 @@ public class Exception111{
     return data1 / data2;
   }
 }
-
-/*
-class IllegalArgementException extends Exception{
-  IllegalArgementException(String s){super(s);}
-}
-
-class HundredException extends Exception{
-  HundredException(String s){super(s);}
-}*/

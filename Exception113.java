@@ -27,24 +27,27 @@ public class Exception113{
       }
     }
 
-    // 引数が足りない時
+    // 例外処理1 引数が足りない時
     catch(ArrayIndexOutOfBoundsException e){
       System.out.println("引数を与えてください");
     }
 
-    // 引数が数値以外の時
+    // 例外処理2 引数が数値以外の時
     catch(NumberFormatException e){
       System.out.println("引数に数を指定してください");
       System.out.println(e.getMessage());
     }
+
+    // 例外処理3 除数が10の時
     catch(IllegalArgementException e){
       System.out.println(e.getMessage());
     }
+    
+    // 例外処理4 除数が100の時
     catch(HundredException e){
       System.out.println(e.getMessage());
     }
   }
-
 
 // 商を求める
 static int division(String a,String b) throws IllegalArgementException,HundredException{
@@ -53,8 +56,8 @@ static int division(String a,String b) throws IllegalArgementException,HundredEx
   // String型からint型に変換
   data1 = Integer.parseInt(a);
   data2 = Integer.parseInt(b);
-  if(data2 == 10)throw(new IllegalArgementException("10だけは受け付けません"));
-  if(data2 == 100)throw(new HundredException("独自例外:"+data2));
+  if(data2 == 10)throw(new IllegalArgementException("10だけは受け付けません")); // 例外処理3にとぶ
+  if(data2 == 100)throw(new HundredException("独自例外:"+data2)); // 例外処理4にとぶ
   return data1 / data2;
 }
 

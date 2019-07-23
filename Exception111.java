@@ -19,12 +19,12 @@ public class Exception111{
       }
     }
 
-    // 引数が足りない時
+    // 例外処理1 引数が足りない時
     catch(ArrayIndexOutOfBoundsException e){
       System.out.println("引数を与えてください");
     }
 
-    // 引数が数値以外の時
+    // 例外処理2 引数が数値以外の時
     catch(NumberFormatException e){
       System.out.println("引数に数を指定してください");
       System.out.println(e.getMessage());

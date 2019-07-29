@@ -3,7 +3,7 @@ public class Figure{
   public void printArea(){
     System.out.println("Area:" + area);
   }
-//  area.calcArea();
+  
   public void calcArea(){
   }
 }

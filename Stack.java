@@ -69,8 +69,19 @@ public class Stack<T>{
       return send; // stackのトップを返す
     }
   }
+
+  public static void main(String args[]){
+    Stack<String> testStack = new Stack<String>(20);
+    testStack.push("a");
+    testStack.push("s");
+    /*testStack.pop();
+    System.out.println(testStack.pop());*/
+    testStack.pop();
+    System.out.println(testStack.pop());
+    testStack.pop();
+    System.out.println(testStack.pop());
+  }
 }
 
-      
 
 

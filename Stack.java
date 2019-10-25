@@ -1,3 +1,4 @@
+import java.util.*;
 public class Stack<T>{
   private List<T> stack = new ArrayList<T>(); // 可変配列
   private int StackSize; // stackのサイズ
@@ -10,33 +11,57 @@ public class Stack<T>{
   }
 
   // サイズ指定あり
-  public Stack(int StackSize){
-    this.StackSize = Stacksize; // 指定されたサイズのstackを生成
+  public Stack(int size){
+    this.StackSize = size; // 指定されたサイズのstackを生成
     this.StackPointer = 0; // stackポインタの初期化
   }
 
+  // オーバーフロー
+  private boolean Full(){
+    if(this.StackSize == this.StackPointer){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  // アンダーフロー
+  private boolean Empty(){
+    if(this.StackPointer == 0){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 
   // push
-  public void push(T data){
-    if(StackPointer >= stack.length){
-      throw new RuntimeException("stack full");
+  public boolean push(T data){
+    if(Full()){
+      return false;
     }
-    
-    this.stack.add(data);
-    this.StackPointer++;
+    else{
+      this.stack.add(data);
+      this.StackPointer++;
+      return true;
+    }
   }
 
   // pop
   public T pop(){
     T send;
-
-    if(StackPointer <= 0){
-      throw new RuntimeException("stack empty");
+    if(Empty()){
+      return null;
     }
     else{
-    this.StackPointer--;
-    
-    return this.stack()
+      send = this.stack.get(this.StackPointer-1);
+      this.stack.remove(this.StackPointer-1);
+      this.StackPointer--;
+      return send;
+    }
+  }
+}
 
       
 

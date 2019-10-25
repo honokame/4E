@@ -71,14 +71,10 @@ public class Stack<T>{
   }
 
   public static void main(String args[]){
-    Stack<String> testStack = new Stack<String>(20);
-    testStack.push("a");
-    testStack.push("s");
-    /*testStack.pop();
-    System.out.println(testStack.pop());*/
-    testStack.pop();
+    Stack<String> testStack = new Stack<String>();
+    testStack.push("erumo");
+    testStack.push("kuso");
     System.out.println(testStack.pop());
-    testStack.pop();
     System.out.println(testStack.pop());
   }
 }

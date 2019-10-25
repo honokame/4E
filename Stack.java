@@ -37,28 +37,36 @@ public class Stack<T>{
   }
 
   // push
-  public boolean push(T data){
+  public boolean push(T data){ // 可変データをpush
+    
+    // オーバーフロー push NG
     if(Full()){
       return false;
     }
+
+    // push OK
     else{
-      this.stack.add(data);
-      this.StackPointer++;
+      this.stack.add(data); // データの追加
+      this.StackPointer++; // StackPointerを1増やす
       return true;
     }
   }
 
-  // pop
+  // pop を返す
   public T pop(){
-    T send;
+    T send; // StackPointerの記憶用
+
+    // アンダーフロー pop NG
     if(Empty()){
       return null;
     }
+
+    // pop OK
     else{
-      send = this.stack.get(this.StackPointer-1);
-      this.stack.remove(this.StackPointer-1);
-      this.StackPointer--;
-      return send;
+      send = this.stack.get(this.StackPointer-1); // stackのトップを取得
+      this.stack.remove(this.StackPointer-1); // stackのトップの要素を削除
+      this.StackPointer--; // StackPointerを1減らす
+      return send; // stackのトップを返す
     }
   }
 }

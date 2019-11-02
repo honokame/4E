@@ -66,7 +66,7 @@ public class Stack<T>{
     else{
       this.StackPointer--; // StackPointerを1減らす
       send = this.stack.get(this.StackPointer); // stackのトップを取得
-      this.stack.add(null); // stackのトップの要素を削除
+      this.stack.add(null); // stackのトップにnullを代入
       return send; // stackのトップを返す
     }
   }

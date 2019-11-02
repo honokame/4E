@@ -44,7 +44,7 @@ public class Stack<T>{
     if(Full()){
       return false;
     }
-
+    
     // push OK
     else{
       this.stack.add(data); // データの追加
@@ -74,16 +74,11 @@ public class Stack<T>{
   // テスト
   public static void main(String args[]){
     Stack<String> testStack = new Stack<String>(2);
-    //System.out.println(testStack.push("ringo"));
     System.out.println(testStack.push("erumo"));
     System.out.println(testStack.push("kuso"));
     System.out.println(testStack.push("mikan"));
     System.out.println(testStack.pop());  
     System.out.println(testStack.pop());
     System.out.println(testStack.pop());
-
-     }
+    }
 }
-
-
-

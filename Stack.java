@@ -37,7 +37,7 @@ public class Stack<T>{
     }
   }
 
-  // push
+  // push pushできたかを返す
   public boolean push(T data){ // 可変データをpush
     
     // オーバーフロー push NG
@@ -53,9 +53,9 @@ public class Stack<T>{
     }
   }
 
-  // pop を返す
+  // pop stackのトップを返す
   public T pop(){
-    T send; // StackPointerの記憶用
+    T send; // Stackのトップを記憶
 
     // アンダーフロー pop NG
     if(Empty()){
@@ -70,6 +70,7 @@ public class Stack<T>{
       return send; // stackのトップを返す
     }
   }
+
   // テスト
   public static void main(String args[]){
     Stack<String> testStack = new Stack<String>(2);

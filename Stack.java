@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class Stack<T>{
   private List<T> stack = new ArrayList<T>(); // 可変配列
   private int StackSize; // stackのサイズ
@@ -69,14 +70,18 @@ public class Stack<T>{
       return send; // stackのトップを返す
     }
   }
-
+  // テスト
   public static void main(String args[]){
-    Stack<String> testStack = new Stack<String>();
-    testStack.push("erumo");
-    testStack.push("kuso");
+    Stack<String> testStack = new Stack<String>(2);
+    //System.out.println(testStack.push("ringo"));
+    System.out.println(testStack.push("erumo"));
+    System.out.println(testStack.push("kuso"));
+    System.out.println(testStack.push("mikan"));
+    System.out.println(testStack.pop());  
     System.out.println(testStack.pop());
     System.out.println(testStack.pop());
-  }
+
+     }
 }
 
 

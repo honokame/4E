@@ -10,3 +10,12 @@ public Queue(){
 // サイズ指定あり
 public Queue(int size){
 }
+
+// enqueue enqueueできたか返す
+public boolean enqueue(T data){
+  
+}
+
+// dequeue 
+public T dequeue(){
+}

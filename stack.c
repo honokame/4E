@@ -54,7 +54,7 @@ int main(void){
       break;
     case 'm':
       for(int i = 0;i < no;i++){
-        pop(top);
+        top = pop(top);
       }
       break;
     case 'p':

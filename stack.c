@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-//#include<string.h>
 
 typedef struct stack1{
   int data;
@@ -52,7 +51,7 @@ int main(void){
       top = push(no,top);
       break;
     case 'd':
-      printf("d\n");
+      pop(top);
       break;
     case 'm':
       printf("m\n");

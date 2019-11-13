@@ -35,11 +35,6 @@ stack *pop(stack *top){
 
 int main(void){
   stack *top = NULL;
-
-  /*top = push(2,top);
-  top = push(5,top);
-  pop(top);
-*/
   char input[20],command;
   int no;
   
@@ -54,10 +49,12 @@ int main(void){
       pop(top);
       break;
     case 'm':
-      printf("m\n");
+      for(int i = 0;i < no;i++){
+        pop(top);
+      }
       break;
     case 'p':
-      printf("p\n");
+      printf("\n");
       break;
     case 'q':
       printf("プログラムの実行を終了します\n");

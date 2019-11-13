@@ -62,7 +62,7 @@ int main(void){
       break;
     case 'q':
       printf("プログラムの実行を終了します\n");
-      break;
+      //break;
       return 0;
   }
   }

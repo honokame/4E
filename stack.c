@@ -6,7 +6,7 @@ typedef struct stack1{
   int data;
   struct stack1 *next;
 } stack;
-
+ 
 stack *memory(void){
   return ((stack *) malloc(sizeof(stack)));
 } 
@@ -41,12 +41,14 @@ int main(void){
   top = push(5,top);
   pop(top);
 */
-  char input[20],command[5];
+  char input[20],command;
   int no;
   
   fgets(input,10,stdin);
-  sscanf(input,"%s %d",command,&no);
-  printf("%s\n",command);
+  sscanf(input,"%c %d",&command,&no);
+  
+
+  printf("%c\n",command);
   printf("%d\n",no);
   return 0;
 }

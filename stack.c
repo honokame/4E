@@ -49,7 +49,7 @@ int main(void){
   
   switch(command){
     case 'i':
-      printf("i\n");
+      top = push(no,top);
       break;
     case 'd':
       printf("d\n");
@@ -61,7 +61,7 @@ int main(void){
       printf("p\n");
       break;
     case 'q':
-      printf("q\n");
+      printf("プログラムの実行を終了します\n");
       break;
   }
 //  printf("%c\n",command);

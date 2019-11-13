@@ -15,7 +15,6 @@ stack *push(int x,stack *top){
   p = memory();
   p->data = x;
   p->next = top;
-  printf("push OK\n");
   return p;
 }
 
@@ -28,7 +27,6 @@ stack *pop(stack *top){
   else{
     x = top->data;
     top = top->next;
-    printf("pop OK %d\n",x);
   }
   return top;
 }
@@ -37,6 +35,8 @@ int main(void){
   stack *top = NULL;
   char input[20],command;
   int no;
+
+  printf("i 数字(数字を挿入),d(削除),m 数字(数字分削除),p(出力),q(終了)を入力してください。\n");
 
   while(1){
     fgets(input,10,stdin);
@@ -57,10 +57,10 @@ int main(void){
       case 'p':
         while(top != NULL){
           top = pop(top);
+          printf("%d",top);
         }
         break;
       case 'q':
-        printf("プログラムの実行を終了します\n");
         return 0;
     }
   }

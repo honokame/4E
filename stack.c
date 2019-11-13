@@ -38,15 +38,19 @@ int main(void){
   char input[20],command;
   int no;
   
+ // fgets(input,10,stdin);
+//  sscanf(input,"%c %d",&command,&no);
+
+  while(1){
   fgets(input,10,stdin);
   sscanf(input,"%c %d",&command,&no);
-  
+
   switch(command){
     case 'i':
       top = push(no,top);
       break;
     case 'd':
-      pop(top);
+      top = pop(top);
       break;
     case 'm':
       for(int i = 0;i < no;i++){
@@ -59,6 +63,8 @@ int main(void){
     case 'q':
       printf("プログラムの実行を終了します\n");
       break;
+      return 0;
+  }
   }
 //  printf("%c\n",command);
 //  printf("%d\n",no);

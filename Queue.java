@@ -11,6 +11,11 @@ public Queue(){
 public Queue(int size){
 }
 
+private boolean Full(){
+}
+
+private boolean Empty(){
+}
 // enqueue enqueueできたか返す
 public boolean enqueue(T data){
   

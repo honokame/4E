@@ -1,3 +1,5 @@
+//　E1607　奥口 穂香  
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -41,6 +43,7 @@ stack *pop(stack *top){
 // メイン関数
 int main(void){
   stack *top = NULL;
+  stack *cache = NULL;
   char input[20],command;
   int no;
 
@@ -65,10 +68,12 @@ int main(void){
         break;
       
       case 'p': // 表示
+        cache = top;
         while(top != NULL){
           top = pop(top);
           printf("%d ",x);
         }
+        top = cache;
         printf("\n");
         break;
       

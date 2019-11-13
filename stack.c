@@ -5,7 +5,7 @@ typedef struct stack1{
   int data;
   struct stack1 *next;
 } stack;
- 
+
 stack *memory(void){
   return ((stack *) malloc(sizeof(stack)));
 } 
@@ -21,7 +21,7 @@ stack *push(int x,stack *top){
 
 stack *pop(stack *top){
   int x;
-  
+
   if(top == NULL){
     printf("pop NG\n");
   }
@@ -37,36 +37,32 @@ int main(void){
   stack *top = NULL;
   char input[20],command;
   int no;
-  
- // fgets(input,10,stdin);
-//  sscanf(input,"%c %d",&command,&no);
 
   while(1){
-  fgets(input,10,stdin);
-  sscanf(input,"%c %d",&command,&no);
+    fgets(input,10,stdin);
+    sscanf(input,"%c %d",&command,&no);
 
-  switch(command){
-    case 'i':
-      top = push(no,top);
-      break;
-    case 'd':
-      top = pop(top);
-      break;
-    case 'm':
-      for(int i = 0;i < no;i++){
+    switch(command){
+      case 'i':
+        top = push(no,top);
+        break;
+      case 'd':
         top = pop(top);
-      }
-      break;
-    case 'p':
-      printf("\n");
-      break;
-    case 'q':
-      printf("プログラムの実行を終了します\n");
-      //break;
-      return 0;
+        break;
+      case 'm':
+        for(int i = 0;i < no;i++){
+          top = pop(top);
+        }
+        break;
+      case 'p':
+        while(top != NULL){
+          top = pop(top);
+        }
+        break;
+      case 'q':
+        printf("プログラムの実行を終了します\n");
+        return 0;
+    }
   }
-  }
-//  printf("%c\n",command);
-//  printf("%d\n",no);
   return 0;
 }

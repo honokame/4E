@@ -44,8 +44,6 @@ int main(void){
   char input[20],command;
   int no;
 
-  printf("i 数字(数字を挿入),d(削除),m 数字(数字分削除),p(出力),q(終了)を入力してください。\n");
-　
   // stackの無限ループ
   while(1){
     fgets(input,10,stdin); // 入力読み取り
@@ -76,6 +74,10 @@ int main(void){
       
       case 'q': // 終了
         return 0;
+
+      default: // 例外入力
+        printf("i 数字(数字を挿入),d(削除),m 数字(数字分削除),p(出力),q(終了)を入力してください。\n");
+        break;
     }
   }
   return 0;

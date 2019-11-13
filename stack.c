@@ -10,4 +10,11 @@ typedef struct satck1{
 stack *memory(void){
   return ((stack *) malloc(sizeof(stack)));
 }
- 
+
+stack *push(int x,satck *top){
+  stack *p;
+  p = memory();
+  p->data = x;
+  p->next = top;
+  return p;
+}

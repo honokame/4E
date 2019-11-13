@@ -1,11 +1,13 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 typedef struct stack1{
   int data;
   struct stack1 *next;
-  //struct stack1 *top = NULL;
+//  struct stack1 *top = NULL;
 } stack;
 
+struct stack *top = NULL;
 
 stack *memory(void){
   return ((stack *) malloc(sizeof(stack)));
@@ -33,3 +35,6 @@ stack *pop(stack *top){
   return top;
 }
 
+int main(void){
+  return 0;
+}

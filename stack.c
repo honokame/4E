@@ -47,8 +47,24 @@ int main(void){
   fgets(input,10,stdin);
   sscanf(input,"%c %d",&command,&no);
   
-
-  printf("%c\n",command);
-  printf("%d\n",no);
+  switch(command){
+    case 'i':
+      printf("i\n");
+      break;
+    case 'd':
+      printf("d\n");
+      break;
+    case 'm':
+      printf("m\n");
+      break;
+    case 'p':
+      printf("p\n");
+      break;
+    case 'q':
+      printf("q\n");
+      break;
+  }
+//  printf("%c\n",command);
+//  printf("%d\n",no);
   return 0;
 }

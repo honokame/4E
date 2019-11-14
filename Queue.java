@@ -6,7 +6,6 @@ public class Queue<T>{
   private int head;
   private int tail;
 
-
   // 指定なし
   public Queue(){
     this.QueueSize = 10;
@@ -16,7 +15,7 @@ public class Queue<T>{
 
   // サイズ指定あり
   public Queue(int size){
-    this.QueueSize = size;
+    this.QueueSize = size + 1;
     this.head = 0;
     this.tail = 0;
   }
@@ -38,7 +37,7 @@ public class Queue<T>{
       return false;
     }
   }
-  
+
   // enqueue enqueueできたか返す
   public boolean enqueue(T data){
     if(Full()){
@@ -50,11 +49,10 @@ public class Queue<T>{
       if(this.tail == this.QueueSize){
         this.tail = 0;
       }
-      //this.tail++;
       return true;
+    }
   }
-  }
-  
+
   // dequeue 
   public T dequeue(){
     T send;
@@ -62,7 +60,6 @@ public class Queue<T>{
       return null;
     }
     else{
-      //this.head++;
       send = this.Queue.get(this.head);
       this.head++;
       if(this.head == this.QueueSize){

@@ -73,9 +73,9 @@ public class Queue<T>{
   }
 
   public static void main(String args[]){
-    Queue<String> testQueue = new Queue<String>();
-    System.out.println(testQueue.enqueue("kuso"));
+    Queue<String> testQueue = new Queue<String>(2);
     System.out.println(testQueue.enqueue("erumo"));
+    System.out.println(testQueue.enqueue("kuso"));
     System.out.println(testQueue.enqueue("ringo"));
     System.out.println(testQueue.dequeue());
     System.out.println(testQueue.dequeue());

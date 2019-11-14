@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Stack<T>{
-  private List<T> stack = new ArrayList<T>(); // 可変配列
+  private List<T> Stack = new ArrayList<T>(); // 可変配列
   private int StackSize; // stackのサイズ
   private int StackPointer; // stackのポインタ
 
@@ -47,7 +47,7 @@ public class Stack<T>{
     
     // push OK
     else{
-      this.stack.add(data); // データの追加
+      this.Stack.add(data); // データの追加
       this.StackPointer++; // StackPointerを1増やす
       return true;
     }
@@ -65,8 +65,8 @@ public class Stack<T>{
     // pop OK
     else{
       this.StackPointer--; // StackPointerを1減らす
-      send = this.stack.get(this.StackPointer); // stackのトップを取得
-      this.stack.add(null); // stackのトップにnullを代入
+      send = this.Stack.get(this.StackPointer); // stackのトップを取得
+      this.Stack.add(null); // stackのトップにnullを代入
       return send; // stackのトップを返す
     }
   }

@@ -5,12 +5,14 @@ public class Queue<T>{
   private int QueueSize;
   private int head;
   private int tail;
+  private int count;
 
   // 指定なし
   public Queue(){
     this.QueueSize = 10;
     this.head = 0;
     this.tail = 0;
+    this.count = 0;
   }
 
   // サイズ指定あり
@@ -18,10 +20,14 @@ public class Queue<T>{
     this.QueueSize = size + 1;
     this.head = 0;
     this.tail = 0;
+    this.count = 0;
   }
 
   private boolean Full(){
     if(this.head == ((this.tail + 1) % this.QueueSize)){
+      return true;
+    }
+    if(this.count == this.QueueSize - 1){
       return true;
     }
     else{
@@ -47,6 +53,7 @@ public class Queue<T>{
       this.tail++;
       this.Queue.add(data);
       this.tail = this.tail % this.QueueSize;
+      this.count++;
       return true;
     }
   }
@@ -60,6 +67,7 @@ public class Queue<T>{
     else{
       send = this.Queue.get(this.head);
       this.head = this.head + 1 % this.QueueSize;
+      this.count--;
       return send;
     }
   }

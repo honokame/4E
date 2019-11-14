@@ -45,8 +45,12 @@ public class Queue<T>{
       return false;
     }
     else{
-      this.Queue.add(data);
       this.tail++;
+      this.Queue.add(data);
+      if(this.tail == this.QueueSize){
+        this.tail = 0;
+      }
+      //this.tail++;
       return true;
   }
   }
@@ -58,15 +62,18 @@ public class Queue<T>{
       return null;
     }
     else{
-      this.head++;
+      //this.head++;
       send = this.Queue.get(this.head);
-      this.Queue.add(null);
+      this.head++;
+      if(this.head == this.QueueSize){
+        this.head = 0;
+      }
       return send;
     }
   }
 
   public static void main(String args[]){
-    Queue<String> testQueue = new Queue<String>(2);
+    Queue<String> testQueue = new Queue<String>();
     System.out.println(testQueue.enqueue("kuso"));
     System.out.println(testQueue.enqueue("erumo"));
     System.out.println(testQueue.enqueue("ringo"));

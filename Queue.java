@@ -27,7 +27,7 @@ public class Queue<T>{
     if(this.head == ((this.tail + 1) % this.QueueSize)){
       return true;
     }
-    if(this.count == this.QueueSize - 1){
+    if(this.count == this.QueueSize){
       return true;
     }
     else{
@@ -37,6 +37,9 @@ public class Queue<T>{
 
   private boolean Empty(){
     if(this.head == this.tail){
+      return true;
+    }
+    if(this.count == 0){
       return true;
     }
     else{
@@ -53,7 +56,9 @@ public class Queue<T>{
       this.tail++;
       this.Queue.add(data);
       this.tail = this.tail % this.QueueSize;
-      this.count++;
+      //if(this.count != this.QueueSize - 1){
+        this.count++;
+      //}
       return true;
     }
   }
@@ -67,9 +72,9 @@ public class Queue<T>{
     else{
       send = this.Queue.get(this.head);
       this.head = this.head + 1 % this.QueueSize;
-      if(this.count != 0){
+      //if(this.count != 0){
         this.count--;
-      }
+      //}
       return send;
     }
   }
@@ -84,5 +89,6 @@ public class Queue<T>{
     System.out.println(testQueue.dequeue());
     System.out.println(testQueue.dequeue());
     System.out.println(testQueue.dequeue());
+    System.out.println(testQueue.enqueue("ringo"));
   }
 }

@@ -22,9 +22,21 @@ public class Queue<T>{
   }
 
   private boolean Full(){
+    if(this.head == (this.tail + 1) % this.QueueSize){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
   private boolean Empty(){
+    if(this.head == this.tail){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
   
   // enqueue enqueueできたか返す

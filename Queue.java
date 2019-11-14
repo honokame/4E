@@ -67,7 +67,9 @@ public class Queue<T>{
     else{
       send = this.Queue.get(this.head);
       this.head = this.head + 1 % this.QueueSize;
-      this.count--;
+      if(this.count != 0){
+        this.count--;
+      }
       return send;
     }
   }

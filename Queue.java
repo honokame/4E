@@ -26,13 +26,31 @@ public class Queue<T>{
 
   private boolean Empty(){
   }
+  
   // enqueue enqueueできたか返す
   public boolean enqueue(T data){
-
+    if(Full()){
+      return false;
+    }
+    else{
+      this.Queue.add(data);
+      this.tail++;
+      return true;
   }
-
+  }
+  
   // dequeue 
   public T dequeue(){
+    T send;
+    if(Empty()){
+      return null;
+    }
+    else{
+      this.head++;
+      send = this.Queue.get(this.head);
+      this.Queue.add(null);
+      return send;
+    }
   }
 
   public static void main(String args[]){

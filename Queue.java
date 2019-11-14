@@ -3,48 +3,26 @@ import java.util.*;
 public class Queue<T>{
   private List<T> Queue = new ArrayList<T>();
   private int QueueSize;
-  private int head;
-  private int tail;
-  private int count;
+  private int head = 0;
+  private int tail= 0;
+  private int count = 0;
 
   // 指定なし
   public Queue(){
     this.QueueSize = 10;
-    this.head = 0;
-    this.tail = 0;
-    this.count = 0;
   }
 
   // サイズ指定あり
   public Queue(int size){
     this.QueueSize = size + 1;
-    this.head = 0;
-    this.tail = 0;
-    this.count = 0;
   }
 
   private boolean Full(){
-    if(this.head == ((this.tail + 1) % this.QueueSize)){
-      return true;
-    }
-    if(this.count == this.QueueSize){
-      return true;
-    }
-    else{
-      return false;
-    }
+    return this.head == ((this.tail + 1) % this.QueueSize) || this.count == this.QueueSize;
   }
 
   private boolean Empty(){
-    if(this.head == this.tail){
-      return true;
-    }
-    if(this.count == 0){
-      return true;
-    }
-    else{
-      return false;
-    }
+    return this.head == this.tail || this.count == 0;
   }
 
   // enqueue enqueueできたか返す
@@ -56,9 +34,7 @@ public class Queue<T>{
       this.tail++;
       this.Queue.add(data);
       this.tail = this.tail % this.QueueSize;
-      //if(this.count != this.QueueSize - 1){
-        this.count++;
-      //}
+      this.count++;
       return true;
     }
   }
@@ -72,9 +48,7 @@ public class Queue<T>{
     else{
       send = this.Queue.get(this.head);
       this.head = this.head + 1 % this.QueueSize;
-      //if(this.count != 0){
-        this.count--;
-      //}
+      this.count--;
       return send;
     }
   }

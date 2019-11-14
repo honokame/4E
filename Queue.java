@@ -4,8 +4,8 @@ public class Queue<T>{
   private List<T> Queue = new ArrayList<T>(); 
   private int QueueSize; 
   private int head = 0; 
-  private int tail= 0;　
-    private int count = 0; // Queueに格納されているデータの数
+  private int tail= 0;
+  private int count = 0; // Queueに格納されているデータの数
 
   public Queue(){
     this.QueueSize = 10;
@@ -52,7 +52,7 @@ public class Queue<T>{
       return send;
     }
   }
-  　
+  
     // テスト
     public static void main(String args[]){
       Queue<String> testQueue = new Queue<String>(2);

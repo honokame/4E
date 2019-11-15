@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#define MAX 6;
+#define MAX 6
 
 int Buffer[6];
 int head = 0,tail = 0,count = 0;
@@ -38,9 +38,11 @@ int main(void){
 
   switch(command){
     case 'i': // 挿入
+      enqueue(no);
       break;
 
     case 'd': // 削除
+      dequeue();
       break;
 
     case 'p': // 表示

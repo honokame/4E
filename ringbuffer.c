@@ -53,8 +53,8 @@ int main(void){
     case 'p': // 表示
       cache = head;
       for(int i = 0;i < 5;i++){
-        head = Buffer[head];
-        printf("%d",Buffer[head]);
+        //head = Buffer[head];
+        printf("%d",dequeue());
         
         }
       //}

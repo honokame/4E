@@ -6,20 +6,22 @@
 int Buffer[6];
 int head = 0,tail = 0,count = 0;
 
-void enqueue(int data){
+int enqueue(int data){
   if((head == ((tail + 1) % MAX)) || count == MAX){
-    printf("enqueue NG\n");
+    //printf("enqueue NG\n");
+    return 0;
   }
   else{
     Buffer[tail] = data;
     tail = (tail + 1) % MAX;
     count++;
+    return 1;
   }
 }
 int dequeue(){
   int send;
   if(head == tail || count == 0){
-    return NULL;
+    return 0;
   }
   else{
     send = Buffer[head];
@@ -32,25 +34,30 @@ int dequeue(){
 // メイン関数
 int main(void){
   char input[20],command;
-  int no,x;
+  int no,x,cache = 0;
   while(1){
   fgets(input,10,stdin); // 入力読み取り
   sscanf(input,"%c%d",&command,&no); // 文字と数字に変換
 
   switch(command){
     case 'i': // 挿入
-      enqueue(no);
+      //enqueue(no);
+      printf("%d\n",enqueue(no));
       break;
 
     case 'd': // 削除
-      dequeue();
+      //dequeue();
+      printf("%d\n",dequeue());
       break;
 
     case 'p': // 表示
-      while(head != NULL){
+      //cache = head;
+      for(int i = 0;i < 5;i++){
         x = dequeue();
-        printf("%d",x);
+        printf("%d,%d",x,head);
       }
+      //head = cache;
+      printf("\n");
       break;
 
     case 'q': // 終了

@@ -51,12 +51,14 @@ int main(void){
       break;
 
     case 'p': // 表示
-      //cache = head;
+      cache = head;
       for(int i = 0;i < 5;i++){
-        x = dequeue();
-        printf("%d,%d",x,head);
-      }
-      //head = cache;
+        head = Buffer[head];
+        printf("%d",Buffer[head]);
+        
+        }
+      //}
+      head = cache;
       printf("\n");
       break;
 

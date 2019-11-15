@@ -1,6 +1,33 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+#define MAX 6;
+
+int Buffer[6];
+int head = 0,tail = 0,count = 0;
+
+void enqueue(int data){
+  if(head == ((tail + 1) % MAX)) || count == MAX{
+    printf("enqueue NG\n");
+  }
+  else{
+    Buffer[tail] = data;
+    tail = (tail + 1) % MAX;
+    count++;
+  }
+void dequeue(){
+  int send;
+  if(head == tail || count == 0){
+    return NULL;
+  }
+  else{
+    send = Buffer[head];
+    head = head + 1 % MAX;
+    count--;
+    return send;
+  }
+}
+
 // メイン関数
 int main(void){
   char input[20],command;

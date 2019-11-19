@@ -1,31 +1,50 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#define MAX 6
+#define bool int
+#define true 1
+#define false !true
+#define MAX 5
 
-int Buffer[6];
+int Buffer[MAX];
 int head = 0,tail = 0,count = 0;
 
-int enqueue(int data){
-  if(head == ((tail + 1) % MAX) || count == MAX){
+bool Empty(void){
+  return count == 0;
+}
+
+bool Full(void){
+  return count == MAX;
+}
+
+bool enqueue(int data){
+  /*if(head == ((tail + 1) % MAX) || count == MAX){
     //printf("enqueue NG\n");
     return 0;
+  }*/
+  if(Full()){
+    return false;
   }
   else{
     Buffer[tail] = data;
-    tail = (tail + 1) % MAX;
+    tail++;
+    //tail = (tail + 1) % MAX;
     count++;
-    return 1;
+    return true;
   }
 }
-int dequeue(){
+int dequeue(void){
   int send;
-  if(head == tail || count == 0){
+  /*if(head == tail || count == 0){
     return 0;
+  }*/
+  if(Empty()){
+    return -1;
   }
   else{
     send = Buffer[head];
-    head = head + 1 % MAX;
+    head++;
+    //head = head + 1 % MAX;
     count--;
     return send;
   }

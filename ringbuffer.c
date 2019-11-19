@@ -30,6 +30,7 @@ bool enqueue(int data){
     tail++;
     //tail = (tail + 1) % MAX;
     count++;
+    //printf("\t%d",tail);
     return true;
   }
 }
@@ -44,6 +45,7 @@ int dequeue(void){
   else{
     send = Buffer[head];
     head++;
+    //printf("\t%d",head);
     //head = head + 1 % MAX;
     count--;
     return send;
@@ -69,8 +71,15 @@ int main(void){
       printf("%d\n",dequeue());
       break;
 
-    /*case 'p': // 表示
+    case 'p': // 表示
       cache = head;
+      for(int i = 0;i < 5;i++){
+        printf("%d",Buffer[head % MAX]);
+        head++;
+      }
+      head = cache;
+      break;
+      /*cache = head;
       for(int i = 0;i < 5;i++){
         //head = Buffer[head];
         printf("%d",dequeue());

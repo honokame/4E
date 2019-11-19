@@ -9,16 +9,8 @@
 int Buffer[1000];
 int head = 0,tail = 0,count = 0;
 
-bool Empty(void){
-  return count == 0;
-}
-
-bool Full(void){
-  return count == MAX;
-}
-
 bool enqueue(int data){
-  if(Full()){
+  if(count == MAX){
     return false;
   }
   else{
@@ -30,7 +22,7 @@ bool enqueue(int data){
 }
 int dequeue(void){
   int send;
-  if(Empty()){
+  if(count == 0){
     return -1;
   }
   else{

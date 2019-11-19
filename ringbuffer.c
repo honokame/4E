@@ -48,7 +48,6 @@ int main(void){
   while(1){
     fgets(input,10,stdin); // 入力読み取り
     sscanf(input,"%c%d",&command,&no); // 文字と数字に変換
-    //printf("%d,%d\n",head,tail);
 
     switch(command){
       case 'i': // 挿入
@@ -60,7 +59,7 @@ int main(void){
         break;
 
       case 'p': // 表示
-        for(int i = 0;i < 5;i++){
+        for(int i = 0;i < count;i++){
           printf("%d",Buffer[head + cache]);
           cache++;
         }

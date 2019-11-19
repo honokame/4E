@@ -18,35 +18,24 @@ bool Full(void){
 }
 
 bool enqueue(int data){
-  /*if(head == ((tail + 1) % MAX) || count == MAX){
-    //printf("enqueue NG\n");
-    return 0;
-  }*/
   if(Full()){
     return false;
   }
   else{
     Buffer[tail] = data;
     tail++;
-    //tail = (tail + 1) % MAX;
     count++;
-    //printf("\t%d",tail);
     return true;
   }
 }
 int dequeue(void){
   int send;
-  /*if(head == tail || count == 0){
-    return 0;
-  }*/
   if(Empty()){
     return -1;
   }
   else{
     send = Buffer[head];
     head++;
-    //printf("\t%d",head);
-    //head = head + 1 % MAX;
     count--;
     return send;
   }
@@ -57,48 +46,34 @@ int main(void){
   char input[20],command;
   int no,x,cache = 0;
   while(1){
-  fgets(input,10,stdin); // 入力読み取り
-  sscanf(input,"%c%d",&command,&no); // 文字と数字に変換
+    fgets(input,10,stdin); // 入力読み取り
+    sscanf(input,"%c%d",&command,&no); // 文字と数字に変換
 
-  switch(command){
-    case 'i': // 挿入
-      //enqueue(no);
-      printf("%d\n",enqueue(no));
-      break;
+    switch(command){
+      case 'i': // 挿入
+        printf("%d\n",enqueue(no));
+        break;
 
-    case 'd': // 削除
-      //dequeue();
-      printf("%d\n",dequeue());
-      break;
+      case 'd': // 削除
+        printf("%d\n",dequeue());
+        break;
 
-    case 'p': // 表示
-      //cache = head;
-      for(int i = 0;i < 5;i++){
-        printf("%d",Buffer[(head % MAX) + cache]);
-        cache++;
-        //head++;
-      }
-      cache = 0;
-      //head = cache;
-      break;
-      /*cache = head;
-      for(int i = 0;i < 5;i++){
-        //head = Buffer[head];
-        printf("%d",dequeue());
-        
+      case 'p': // 表示
+        for(int i = 0;i < 5;i++){
+          printf("%d",Buffer[(head % MAX) + cache]);
+          cache++;
         }
-      //}
-      head = cache;
-      printf("\n");
-      break;
-*/
-    case 'q': // 終了
-      return 0;
+        cache = 0;
+        printf("\n");
+        break;
 
-    default: // 例外入力
-      printf("i数字(数字を挿入),d(削除),p(出力),q(終了)を入力してください\n");
-      break;
-  }
+      case 'q': // 終了
+        return 0;
+
+      default: // 例外入力
+        printf("i数字(数字を挿入),d(削除),p(出力),q(終了)を入力してください\n");
+        break;
+    }
   }
   return 0;
 }

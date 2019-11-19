@@ -6,7 +6,7 @@
 #define false !true
 #define MAX 5
 
-int Buffer[MAX];
+int Buffer[1000];
 int head = 0,tail = 0,count = 0;
 
 bool Empty(void){
@@ -48,6 +48,7 @@ int main(void){
   while(1){
     fgets(input,10,stdin); // 入力読み取り
     sscanf(input,"%c%d",&command,&no); // 文字と数字に変換
+    //printf("%d,%d\n",head,tail);
 
     switch(command){
       case 'i': // 挿入
@@ -60,7 +61,7 @@ int main(void){
 
       case 'p': // 表示
         for(int i = 0;i < 5;i++){
-          printf("%d",Buffer[(head % MAX) + cache]);
+          printf("%d",Buffer[head + cache]);
           cache++;
         }
         cache = 0;

@@ -72,12 +72,14 @@ int main(void){
       break;
 
     case 'p': // 表示
-      cache = head;
+      //cache = head;
       for(int i = 0;i < 5;i++){
-        printf("%d",Buffer[head % MAX]);
-        head++;
+        printf("%d",Buffer[(head % MAX) + cache]);
+        cache++;
+        //head++;
       }
-      head = cache;
+      cache = 0;
+      //head = cache;
       break;
       /*cache = head;
       for(int i = 0;i < 5;i++){

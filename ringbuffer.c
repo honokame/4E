@@ -7,7 +7,7 @@ int Buffer[6];
 int head = 0,tail = 0,count = 0;
 
 int enqueue(int data){
-  if((head == ((tail + 1) % MAX)) || count == MAX){
+  if(head == ((tail + 1) % MAX) || count == MAX){
     //printf("enqueue NG\n");
     return 0;
   }
@@ -50,7 +50,7 @@ int main(void){
       printf("%d\n",dequeue());
       break;
 
-    case 'p': // 表示
+    /*case 'p': // 表示
       cache = head;
       for(int i = 0;i < 5;i++){
         //head = Buffer[head];
@@ -61,12 +61,12 @@ int main(void){
       head = cache;
       printf("\n");
       break;
-
+*/
     case 'q': // 終了
       return 0;
 
     default: // 例外入力
-      printf("i数字(数字を挿入),d(削除),p(出力),q(終了)を入力してください");
+      printf("i数字(数字を挿入),d(削除),p(出力),q(終了)を入力してください\n");
       break;
   }
   }

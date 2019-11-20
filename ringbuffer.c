@@ -1,29 +1,31 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#define bool int
-#define true 1
-#define false !true
 #define MAX 5
 
-int Buffer[1000];
+int Buffer[10000];
 int head = 0,tail = 0,count = 0;
 
-bool enqueue(int data){
+int enqueue(int data){
+
+  // オーバーフロー
   if(count == MAX){
-    return false;
+    printf("enqueue NG\n");
   }
   else{
     Buffer[tail] = data;
     tail++;
     count++;
-    return true;
+    return 0;
   }
 }
+
 int dequeue(void){
   int send;
+  
+  // アンダーフロー
   if(count == 0){
-    return -1;
+    printf("dequeue NG\n");
   }
   else{
     send = Buffer[head];
@@ -36,18 +38,19 @@ int dequeue(void){
 // メイン関数
 int main(void){
   char input[20],command;
-  int no,x,cache = 0;
+  int no,cache = 0;
+  
   while(1){
     fgets(input,10,stdin); // 入力読み取り
     sscanf(input,"%c%d",&command,&no); // 文字と数字に変換
 
     switch(command){
       case 'i': // 挿入
-        printf("%d\n",enqueue(no));
+        enqueue(no);
         break;
 
       case 'd': // 削除
-        printf("%d\n",dequeue());
+        dequeue();
         break;
 
       case 'p': // 表示

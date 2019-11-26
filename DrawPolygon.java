@@ -4,25 +4,18 @@ import java.util.Random;
 
 public class DrawPolygon extends Turtle implements Drawable2{
   public void draw(int x,int y,int radius,int n,int color){
-    //TurtleFrame f = new TurtleFrame();
-    //f.add(hm);
+    moveTo(x,y,0);
+    
 
   }
-  
+
   public static void main(String[] args){
     int x,y,n,radius,color;
     TurtleFrame f = new TurtleFrame();
-    DrawPolygon hm = new DrawPolygon();
-    //Turtle hm = new Turtle();
+    DrawPolygon kame = new DrawPolygon();
     Random rand1 = new Random();
-    //f.add(hm);
-    /*int x = rand.nextInt(401);
-    int y = rand.nextInt(401);
-    int n = rand.nextInt(8) + 3;
-    int radius = rand.nextInt(100) + 1;
-    int color = rand.nextInt(3);
-    */
-    
+    f.add(kame);
+
     for(int i = 0; i < 20;i++){ 
       Random rand = new Random();
       x = rand1.nextInt(401);
@@ -30,9 +23,12 @@ public class DrawPolygon extends Turtle implements Drawable2{
       n = rand1.nextInt(8) + 3;
       radius = rand1.nextInt(100) + 1;
       color = rand1.nextInt(3);
-      //f.add(hm);
-
-  //   hm.draw(x,y,radius,n,color);
+      //kame[i] = new DrawPolygon();
+      //f.add(kame[i]);
+      System.out.print(x);
+      System.out.print("\t");
+      System.out.println(y);
+      kame.draw(x,y,radius,n,color);
     }
   }
 }

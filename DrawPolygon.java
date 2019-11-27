@@ -1,16 +1,19 @@
 import tg.*;
 import java.util.*;
 import java.util.Random;
+import java.lang.Math;
 
 public class DrawPolygon extends Turtle implements Drawable2{
   public void draw(int x,int y,int radius,int n,int color){
-    //private int i;
+    double a = 2 * radius * Math.sin(Math.PI / n); 
     up();
-    moveTo(x,y,0);
+    moveTo(x,y);
+    fd(radius);
     down();
+    lt((360.0 / n) + ((90.0 * (n - 2)) / n));
     for(int i = 0;i < n;i++){
-      fd(radius);
-      rt(360.0 / n);
+      fd(a);
+      lt(360.0 / n);
     }
   }
 
@@ -28,8 +31,6 @@ public class DrawPolygon extends Turtle implements Drawable2{
       n = rand1.nextInt(8) + 3;
       radius = rand1.nextInt(100) + 1;
       color = rand1.nextInt(3);
-      //kame[i] = new DrawPolygon();
-      //f.add(kame[i]);
       kame.draw(x,y,radius,n,color);
     }
   }

@@ -4,9 +4,14 @@ import java.util.Random;
 
 public class DrawPolygon extends Turtle implements Drawable2{
   public void draw(int x,int y,int radius,int n,int color){
+    //private int i;
+    up();
     moveTo(x,y,0);
-    
-
+    down();
+    for(int i = 0;i < n;i++){
+      fd(radius);
+      rt(360.0 / n);
+    }
   }
 
   public static void main(String[] args){
@@ -25,9 +30,6 @@ public class DrawPolygon extends Turtle implements Drawable2{
       color = rand1.nextInt(3);
       //kame[i] = new DrawPolygon();
       //f.add(kame[i]);
-      System.out.print(x);
-      System.out.print("\t");
-      System.out.println(y);
       kame.draw(x,y,radius,n,color);
     }
   }

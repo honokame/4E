@@ -1,11 +1,25 @@
 import tg.*;
 import java.util.*;
-import java.util.Random;
-import java.lang.Math;
+import java.util.Random.*;
+import java.lang.Math.*;
+import javafx.scene.paint.*;
 
 public class DrawPolygon extends Turtle implements Drawable2{
   public void draw(int x,int y,int radius,int n,int color){
     double a = 2 * radius * Math.sin(Math.PI / n); 
+    
+    switch(color){
+      case 0:
+        setColor(Color.RED);    
+        break;
+      case 1:
+        setColor(Color.BLUE);
+        break;
+      case 2:
+        setColor(Color.YELLOW);
+        break;
+    }
+    
     up();
     moveTo(x,y);
     fd(radius);
@@ -35,7 +49,3 @@ public class DrawPolygon extends Turtle implements Drawable2{
     }
   }
 }
-
-
-
-

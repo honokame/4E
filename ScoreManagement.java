@@ -3,7 +3,7 @@ import java.lang.Math.*;
 
 public class ScoreManagement{
   private ArrayList<Integer> scoredata = new ArrayList<Integer>();
-  private int max = 0,min = 0,size;
+  private int max = 0,min = 100,size;
   private double average,median;
   public void save(ArrayList<Integer> data){
     scoredata = new ArrayList<Integer>(data);

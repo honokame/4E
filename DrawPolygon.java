@@ -44,17 +44,18 @@ public class DrawPolygon extends Turtle implements Drawable2{
   public static void main(String[] args){
     int x,y,n,radius,color;
     TurtleFrame f = new TurtleFrame();
-    DrawPolygon kame = new DrawPolygon();
-    f.add(kame);
+    DrawPolygon[] kame = new DrawPolygon[20];
 
     for(int i = 0; i < 20;i++){ 
+      kame[i] = new DrawPolygon();
+      f.add(kame[i]);
       Random rand = new Random();
       x = rand.nextInt(401);
       y = rand.nextInt(401);
       n = rand.nextInt(8) + 3;
       radius = rand.nextInt(100) + 1;
       color = rand.nextInt(3);
-      kame.draw(x,y,radius,n,color);
+      kame[i].draw(x,y,radius,n,color);
     }
   }
 }

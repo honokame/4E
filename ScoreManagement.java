@@ -7,7 +7,7 @@ public class ScoreManagement{
   private double average,median;
   public void save(ArrayList<Integer> data){
     scoredata = new ArrayList<Integer>(data);
-    size = score.size();
+    size = scoredata.size();
 
     for(int i = 0;i < size;i++){
       max = Math.max(max,scoredata.get(i));
@@ -15,7 +15,7 @@ public class ScoreManagement{
       average += scoredata.get(i);
     }
     
-    average = average / scoredata.get(i);
+    average = average / size;
 
     if((size % 2) == 0){
       median = (scoredata.get(size / 2) + scoredata.get(size / 2 - 1)) / 2;

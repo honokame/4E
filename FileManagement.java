@@ -9,17 +9,19 @@ public class FileManagement{
     ArrayList<Integer> MathData = new ArrayList<Integer>();
     ArrayList<Integer> EnglishData = new ArrayList<Integer>();
     String data;
+
     try(BufferedReader reader = new BufferedReader(new FileReader(name));){
-      if((data = reader.readLine()) != null){
+      while((data = reader.readLine()) != null){
         Scanner scan = new Scanner(data);
         scan.useDelimiter(",");
-        while(scan.hasNextInt()){
+        if(scan.hasNextInt()){
           MathData.add(scan.nextInt());
           EnglishData.add(scan.nextInt());
         }
         scan.close();
       }
-    }catch(IOException error){
+    }
+    catch(IOException error){
       System.out.println("IO Error");
     }
     Math.save(MathData);
@@ -28,11 +30,13 @@ public class FileManagement{
 
   public void write(String name){
     try(PrintWriter writer = new PrintWriter(name,"UTF-8");){
-      writer.printf("%d %d\n",Math.getMax(),English.getMax()); 
-      writer.printf("%d %d\n",Math.getMin(),English.getMin()); 
-      writer.printf("%f %f\n",Math.getAverage(),English.getAverage());
-      writer.printf("%f %f\n",Math.getMedian(),English.getMedian());
-    }catch(IOException error){
+      writer.printf("        Math      English\n");
+      writer.printf("max     %d        %d\n",Math.getMax(),English.getMax()); 
+      writer.printf("min     %d        %d\n",Math.getMin(),English.getMin()); 
+      writer.printf("average %f %f\n",Math.getAverage(),English.getAverage());
+      writer.printf("median  %f %f\n",Math.getMedian(),English.getMedian());
+    }
+    catch(IOException error){
       System.out.println("IO Error");
     }
   }

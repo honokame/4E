@@ -33,7 +33,7 @@ public class ScoreManagement{
     return min;
   }
 
-  public double getAvereage(){
+  public double getAverage(){
     return average;
   }
 

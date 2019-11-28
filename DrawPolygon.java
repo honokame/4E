@@ -5,9 +5,11 @@ import java.lang.Math.*;
 import javafx.scene.paint.*;
 
 public class DrawPolygon extends Turtle implements Drawable2{
-  public void draw(int x,int y,int radius,int n,int color){
-    double a = 2 * radius * Math.sin(Math.PI / n); 
-
+  // 任意の多角形を描画
+  public void draw(int x,int y,int radius,int polygon,int color){
+    double side= 2 * radius * Math.sin(Math.PI / polygon); // １辺の長さ
+    
+    // カメの色決定
     switch(color){
       case 0:
         setColor(Color.RED);    
@@ -19,43 +21,51 @@ public class DrawPolygon extends Turtle implements Drawable2{
         setColor(Color.YELLOW);
         break;
     }
-
+    // 中心座標まで移動後、半径分も移動
+    // 表示されない
     up();
     moveTo(x,y);
     fd(radius);
+
+    // 描画
+    // １回目だけ回る角度が異なる
     down();
-    lt((360.0 / n) + ((90.0 * (n - 2)) / n));
-    for(int i = 0;i < n;i++){
-      fd(a);
-      lt(360.0 / n);
+    lt((360.0 / polygon) + ((90.0 * (polygon - 2)) / polygon));
+    for(int i = 0;i < polygon;i++){
+      fd(side);
+      lt(360.0 / polygon);
     }
-    calcArea(radius,n,x,y);
+    calcArea(x,y,radius,polygon);
   }
 
-  public void calcArea(int radius,int n,int x,int y){
-    double s = (n * radius * radius * Math.sin((2 * Math.PI) / n)) / 2;
-    display(s,radius,x,y);
+  // 多角形の面積を計算
+  public void calcArea(int x,int y,int radius,int polygon){
+    double area = (polygon * Math.pow(radius,2) * Math.sin((2 * Math.PI) / polygon)) / 2;
+    display(x,y,radius,area);
   }
-
-  public void display(double s,int radius,int x,int y){
-    System.out.printf("面積：%f,半径：%d,中心座標：(%d,%d)\n",s,radius,x,y);
+  
+  // 表示
+  public void display(int x,int y,int radius,double area){
+    System.out.printf("area = %f,radius = %d,Point = (%d,%d)\n",area,radius,x,y);
   }
 
   public static void main(String[] args){
-    int x,y,n,radius,color;
-    TurtleFrame f = new TurtleFrame();
-    DrawPolygon[] kame = new DrawPolygon[20];
+    int x,y,polygon,radius,color;
+    TurtleFrame frame = new TurtleFrame();
+    DrawPolygon[] turtle = new DrawPolygon[20];
 
     for(int i = 0; i < 20;i++){ 
-      kame[i] = new DrawPolygon();
-      f.add(kame[i]);
+      turtle[i] = new DrawPolygon();
+      frame.add(turtle[i]);
+      
+      // 乱数生成
       Random rand = new Random();
       x = rand.nextInt(401);
       y = rand.nextInt(401);
-      n = rand.nextInt(8) + 3;
+      polygon = rand.nextInt(8) + 3;
       radius = rand.nextInt(100) + 1;
       color = rand.nextInt(3);
-      kame[i].draw(x,y,radius,n,color);
+      turtle[i].draw(x,y,radius,polygon,color);
     }
   }
 }

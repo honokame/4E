@@ -14,9 +14,9 @@ public class Stack<T>{
   }
 
   private boolean Full(){
-     return this.StackSize == this.StackPointer;
+    return this.StackSize == this.StackPointer;
   }
-  
+
   private boolean Empty(){
     return this.StackPointer == 0;
   }
@@ -56,5 +56,5 @@ public class Stack<T>{
     System.out.println(testStack.pop());
     System.out.println(testStack.pop());
     System.out.println(testStack.push("ringo"));
-    }
+  }
 }

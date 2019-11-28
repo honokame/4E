@@ -5,6 +5,7 @@ public class FileManagement{
   ScoreManagement Math = new ScoreManagement();
   ScoreManagement English = new ScoreManagement();
 
+  // ファイルを読み込み科目ごとに保存
   public void read(String name){
     ArrayList<Integer> MathData = new ArrayList<Integer>();
     ArrayList<Integer> EnglishData = new ArrayList<Integer>();
@@ -13,7 +14,7 @@ public class FileManagement{
     try(BufferedReader reader = new BufferedReader(new FileReader(name));){
       while((data = reader.readLine()) != null){
         Scanner scan = new Scanner(data);
-        scan.useDelimiter(",");
+        scan.useDelimiter(","); // コンマ区切り
         if(scan.hasNextInt()){
           MathData.add(scan.nextInt());
           EnglishData.add(scan.nextInt());
@@ -24,10 +25,11 @@ public class FileManagement{
     catch(IOException error){
       System.out.println("IO Error");
     }
-    Math.save(MathData);
-    English.save(EnglishData);
+    Math.calculate(MathData);
+    English.calculate(EnglishData);
   }
-
+  
+  // それぞれの値を取得し別ファイルに書き込み
   public void write(String name){
     try(PrintWriter writer = new PrintWriter(name,"UTF-8");){
       writer.printf("        Math      English\n");

@@ -6,7 +6,8 @@ public class ScoreManagement{
   private int max = 0,min = 100,size;
   private double average,median;
   
-  public void save(ArrayList<Integer> data){
+  // 保存したデータから値を計算
+  public void calculate(ArrayList<Integer> data){
     scoredata = new ArrayList<Integer>(data);
     size = scoredata.size(); //省略のため 
 
@@ -17,6 +18,8 @@ public class ScoreManagement{
     }
     average = average / size;
     
+    // 中央値計算
+    // データの数で計算方法が異なる
     if((size % 2) == 0){
       median = (scoredata.get(size / 2) + scoredata.get(size / 2 - 1)) / 2;
     }
@@ -25,6 +28,7 @@ public class ScoreManagement{
     }
   }
 
+  // 最高点、最少点、平均点、中央値を取得
   public int getMax(){
     return max;
   }

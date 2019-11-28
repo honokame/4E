@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import java.lang.Math.*;
 
 public class itemRelation{
   private Map<String,Integer> itemMap = new HashMap<>();
@@ -10,18 +11,19 @@ public class itemRelation{
       while((item = reader.readLine()) != null){
         Scanner scan = new Scanner(item);
         scan.useDelimiter(" ");
+        
         while(scan.hasNext()){
           word = scan.next();
-          word = word.replace(",","");
           word = word.replace(".","");
-          word = word.replace("\"","");
+          word = word.replace(",","");
           word = word.replace("(","");
           word = word.replace(")","");
-          word = word.replace("\n","");
-          word = word.replace("\0","");
-          word = word.replace(":","");
           word = word.replace("[","");
           word = word.replace("]","");
+          word = word.replace("\"","");
+          word = word.replace("\0","");
+          word = word.replace("\n","");
+          word = word.replace(":","");
 
           if(itemMap.get(word) == null) {
             itemMap.put(word,1);
@@ -42,20 +44,20 @@ public class itemRelation{
     itemMap.remove("the");
     itemMap.remove("of");
     itemMap.remove("in");
+    itemMap.remove("to");
+  }
+  public Set<String> getSet(){
+    return itemMap.keySet();
   }
 
   public Map<String,Integer> getMap(){
     return itemMap;
   }
 
-  public Set<String> getSet(){
-    return itemMap.keySet();
-  }
-
   public static double getJaccard(Set<String> setA,Set<String> setB){
     Set<String> intersection = new HashSet<>(setA);
     intersection.retainAll(setB);
-    
+
     Set<String> union = new HashSet<>(setA);
     union.addAll(setB);
 
@@ -71,7 +73,7 @@ public class itemRelation{
       key = entry.getKey();
       if(mapA.containsKey(key) && mapB.containsKey(key)){ 
         dotproduct += mapA.get(key) * mapB.get(key);
-        }
+      }
     }
 
     for(Map.Entry<String,Integer> entry : mapA.entrySet()){
@@ -86,13 +88,13 @@ public class itemRelation{
     double CosineSimilarity = dotproduct / (Math.sqrt(sizeA) * Math.sqrt(sizeB));
     return CosineSimilarity;
   }
-  
+
   public static void main(String[] args){
     double jaccard,cosine;
-    itemRelation a = new itemRelation("Apple - Wikipedia.html");
-    itemRelation b = new itemRelation("Pyrus pyrifolia - Wikipedia.html");
-    jaccard = getJaccard(a.getSet(),b.getSet());
-    cosine = getCosine(a.getMap(),b.getMap());
-    System.out.println(jaccard+"\n"+cosine+"\n");
+    itemRelation apple = new itemRelation("Apple - Wikipedia.html");
+    itemRelation pear = new itemRelation("Pyrus pyrifolia - Wikipedia.html");
+    jaccard = getJaccard(apple.getSet(),pear.getSet());
+    cosine = getCosine(apple.getMap(),pear.getMap());
+    System.out.println("jaccard = " + jaccard + "\ncosine = " + cosine);
   }
 }

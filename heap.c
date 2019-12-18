@@ -1,6 +1,8 @@
 #include<stdio.h>
 
+#define MAX 10
 int heap[11] = {0,1,2,3,4,5,6,7};
+int bottom = 7;
 
 int upheap(int index){
   int child = heap[index];
@@ -24,10 +26,21 @@ int  mkheap(){
     upheap(i);
   }
 }
+  int putheap(int data){
+    if(bottom == MAX){
+      printf("heap hull\n");
+    }
+    else{
+      bottom++;
+      heap[bottom] = data;
+      upheap(bottom);
+    }
+  }
+
 int main(void){
   char input[20],command;
   int no;
-  
+
   mkheap();
 
   while(1){
@@ -36,6 +49,7 @@ int main(void){
 
     switch(command){
       case 'i':
+        putheap(no);
         break;
 
       case 'd':

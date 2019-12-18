@@ -1,6 +1,7 @@
 #include<stdio.h>
 
 #define MAX 10
+
 int heap[11] = {0,1,2,3,4,5,6,7};
 int bottom = 7;
 
@@ -17,8 +18,37 @@ int upheap(int index){
       index = parent;
       parent = index / 2;
     }
-    heap[index] = child;
   }
+  heap[index] = child;
+}
+
+int downheap(int index,int bottom){
+  int parent = heap[index];
+  int child = index * 2;
+
+  while(child <= bottom){
+    if((child < bottom) && (heap[child] < heap[child+1])){
+      child++;
+    }
+    if(heap[child] <= parent){
+      break;
+    }
+    heap[index] = heap[child];
+    index = child;
+    child = index * 2;
+  }
+  heap[index] = parent;
+}
+
+int getheap(){
+  if(bottom < 1){
+    printf("delete error\n");
+  }
+  int heapmax = heap[1];
+  heap[1] = heap[bottom];
+  heap[bottom] = 0;
+  bottom--;
+  downheap(1,bottom);
 }
 
 int  mkheap(){
@@ -26,16 +56,17 @@ int  mkheap(){
     upheap(i);
   }
 }
-  int putheap(int data){
-    if(bottom == MAX){
-      printf("heap hull\n");
-    }
-    else{
-      bottom++;
-      heap[bottom] = data;
-      upheap(bottom);
-    }
+
+int putheap(int data){
+  if(bottom == MAX){
+    printf("heap hull\n");
   }
+  else{
+    bottom++;
+    heap[bottom] = data;
+    upheap(bottom);
+  }
+}
 
 int main(void){
   char input[20],command;
@@ -53,6 +84,7 @@ int main(void){
         break;
 
       case 'd':
+        getheap();
         break;
 
       case 'p':

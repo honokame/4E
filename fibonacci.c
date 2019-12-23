@@ -12,10 +12,9 @@ int fib(int no){
 
 int main(void){
   int no;
-
-  while(1){
-    scanf("%d",&no);
-    printf("%d\n",fib(no));	
-  }
+  
+  printf("数字を入力してください\n");
+  scanf("%d",&no);
+  printf("%d番目のフィボナッチ数は%dです\n",no,fib(no));	
   return 0;
 }
